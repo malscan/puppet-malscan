@@ -25,6 +25,8 @@ matrix:
       env: CHECK="syntax lint"
     - stage: syntax
       env: CHECK=metadata_lint
+    - stage: syntax
+      env: CHECK=validate
     - stage: rspec
       env: CHECK=spec
     - stage: rspec
