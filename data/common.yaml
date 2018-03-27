@@ -1,0 +1,34 @@
+---
+## Installation and Configuration Settings
+malscan::application_directory: '/usr/local/share/malscan'
+malscan::binary_path: '/usr/local/bin/malscan'
+malscan::configuration_directory: '/etc/malscan'
+malscan::freshclam_config_file: '/etc/malscan/freshclam.conf'
+malscan::logging_directory: '/var/log/malscan'
+malscan::quarantine_directory: '/root/.malscan/quarantine'
+malscan::signatures_directory: '/var/lib/malscan'
+malscan::string_length_minimum: '15000'
+
+## Default package information
+malscan::package_name: 'malscan'
+
+## Email Notification Settings
+malscan::email_notifications: 'FALSE'
+malscan::malscan_sender_address: ''
+malscan::notification_addresses: ''
+
+## Scan Cronjob Settings
+malscan::scan_cron_minute: '0'
+malscan::scan_cron_hour: '*/6'
+malscan::scan_cron_day: '*'
+malscan::scan_cron_month: '*'
+malscan::scan_cron_weekday: '*'
+malscan::scan_cron_arguments: '-a /var/www'
+
+## Update Cronjob Settings
+malscan::update_cron_minute: '0'
+malscan::update_cron_hour: '2'
+malscan::update_cron_day: '*'
+malscan::update_cron_month: '*'
+malscan::update_cron_weekday: '*'
+malscan::update_cron_arguments: '-u'

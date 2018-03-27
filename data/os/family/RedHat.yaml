@@ -1,0 +1,5 @@
+malscan::dependency_packages:
+  - 'epel-release'
+malscan::install_type: 'package'
+malscan::repo_file: 'malscan.repo'
+malscan::repo_path: '/etc/yum.repos.d'

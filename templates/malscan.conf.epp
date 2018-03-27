@@ -1,0 +1,39 @@
+<% |
+  String $application_directory,
+  String $configuration_directory,
+  String $email_notifications,
+  String $freshclam_config_file,
+  String $logging_directory,
+  String $malscan_sender_address,
+  String $notification_addresses,
+  String $quarantine_directory,
+  String $signatures_directory,
+  String $string_length_minimum
+ | -%>
+#!/bin/bash
+# -------------------------------------------------
+#
+# Package: Malscan
+# Author: Josh Grancell <jgrancell@malscan.org>
+# Description: Linux malware scanner for web servers
+# Copyright: 2015-2018 Josh Grancell
+# License: MIT License
+#
+# -------------------------------------------------
+
+## Directory Structure
+APPLICATION_DIRECTORY="<%= $application_directory -%>"
+CONFIGURATION_DIRECTORY="<%= $configuration_directory -%>"
+FRESHCLAM_CONFIG_FILE="<%= $freshclam_config_file -%>"
+LOGGING_DIRECTORY="<%= $logging_directory -%>"
+SIGNATURES_DIRECTORY="<%= $signatures_directory -%>"
+QUARANTINE_DIRECTORY="<%= $quarantine_directory -%>"
+
+## Email Notifications
+EMAIL_NOTIFICATIONS="<%= $email_notifications -%>"
+MALSCAN_SENDER_ADDRESS="<%= $malscan_sender_address -%>"
+NOTIFICATION_ADDRESSES="<%= $notification_addresses -%>"
+
+
+## Scanning Configuration
+STRING_LENGTH_MINIMUM=<%= $string_length_minimum %>

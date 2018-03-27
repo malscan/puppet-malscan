@@ -1,0 +1,12 @@
+---
+version: 5
+hierarchy:
+  - name: "OS-specific Values"
+    paths:
+      - "os/distro/%{facts.os.name}/%{facts.os.release.major}.yaml"
+      - "os/family/%{facts.os.family}.yaml"
+  - name: "Common values"
+    path: "common.yaml"
+defaults:
+  data_hash: yaml_data
+  datadir: data

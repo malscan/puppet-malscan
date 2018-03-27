@@ -1,0 +1,10 @@
+[malscan]
+name=Malscan
+<%- if $facts['os']['family'] == 'RedHat' { -%>
+baseurl=http://yum.malscan.org/el/<%= $facts['os']['release']['major'] -%>/
+<%- } else { -%>
+baseurl=http://yum.malscan.org/fedora/
+<%- } -%>
+enabled=1
+gpgkey=http://yum.malscan.org/keys/malscan-sign.key
+gpgcheck=1

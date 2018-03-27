@@ -1,0 +1,5 @@
+## Ruby/Gem Ignore Files
+spec/fixtures/modules
+spec/fixtures/manifests
+doc
+.yardoc

@@ -1,0 +1,34 @@
+{
+  "name": "puppetops-malscan",
+  "version": "1.0.0",
+  "author": "Josh Grancell",
+  "summary": "Malscan, a linux malware scanner for web servers.",
+  "license": "MIT",
+  "source": "https://github.com/puppetops/puppetops-malscan.git",
+  "project_page": "https://github.com/puppetops/puppetops-malscan",
+  "issues_url": "https://github.com/puppetops/puppetops-malscan/issues",
+  "dependencies": [],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "7.0",
+        "6.0"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7.0",
+        "6.0"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 5.0"
+    }
+  ],
+  "description": "A Puppet module for malscan that provides enhanced linux malware scanning."
+}

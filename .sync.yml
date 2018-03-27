@@ -1,0 +1,4 @@
+.gitlab-ci.yml:
+  module_name: malscan
+  puppet_tests:
+    Malscan: malscan.pp
