@@ -11,13 +11,13 @@ PuppetLint.configuration.ignore_paths = ['spec/**/*.pp', 'pkg/**/*.pp']
 
 task :validate do
   Dir['manifests/**/*.pp'].each do |manifest|
-    sh "set -eu && set -o pipefail && puppet parser validate --noop #{manifest}"
+    sh "puppet parser validate --noop #{manifest}"
   end
   Dir['spec/**/*.rb', 'lib/**/*.rb'].each do |ruby_file|
-    sh "set -eu && set -o pipefail && ruby -c #{ruby_file}" unless ruby_file =~ %r{spec/fixtures}
+    sh "ruby -c #{ruby_file}" unless ruby_file =~ %r{spec/fixtures}
   end
   Dir['templates/**/*.epp'].each do |template|
-    sh "set -eu && set -o pipefail && puppet epp validate #{template}"
+    sh "puppet epp validate #{template}"
   end
 end
 
