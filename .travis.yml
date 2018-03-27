@@ -8,32 +8,27 @@ before_install:
   - gem update bundler
   - gem --version
   - bundle -v
-script:
-  - 'bundle exec rake $CHECK'
 bundler_args: --without system_tests
-rvm:
-  - 2.1.9
-  - 2.4.3
 env:
-  - PUPPET_GEM_VERSION="~> 5.0" CHECK=spec
-  - PUPPET_GEM_VERSION="~> 4.0" CHECK=spec
+  - PUPPET_GEM_VERSION="~> 5.0"
+  - PUPPET_GEM_VERSION="~> 4.0"
 stages:
-  - rake
+  - syntax
+  - rspec
+jobs:
+  include:
+    - stage: syntax
+      script: bundle exec rake metadata_lint
+    - stage: syntax
+      script: bundle exec rake syntax lint
+    - stage: syntax
+      script: bundle exec rake validate
+    - stage: rspec
+      script: bundle exec rake spec
+    - stage: syntax
+      script: bundle exec rake rubocop
 matrix:
   fast_finish: true
-  include:
-    -
-      stage: rake
-      env: CHECK=rubocop
-    -
-      stage: rake
-      env: CHECK="syntax lint"
-    -
-      stage: rake
-      env: CHECK=metadata_lint
-    -
-      stage: rake
-      env: CHECK=spec
 branches:
   only:
     - master
